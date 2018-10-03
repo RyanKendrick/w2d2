@@ -1,6 +1,20 @@
 const http = require("http");
 const PORT = 8080;
 
+// generates a random alpha numberic string
+function generateRandomString() {
+  var alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var alphaNumString = "";
+
+  for (var i = 0; i < 6; i++) {
+    alphaNumString += alphaNums.charAt(Math.floor(Math.random() * alphaNums.length));
+  }
+
+  return alphaNumString;
+};
+
+console.log(generateRandomString());
+
 // a function which handles requests and sends response
 function requestHandler(request, response) {
   if (request.url == "/") {
